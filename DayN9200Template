@@ -1,8 +1,10 @@
 # This template is simple example of making a switch configuration change
+
+
 # author Nigel Gocan
 !
-vlan {{data_vlan}}
-name data_vlan
+vlan {{demo_vlan}}
+name demo_vlan
 !
 cts role-based enforcement
 cts role-based enforcement vlan-list {{demo_vlan}}
@@ -13,7 +15,7 @@ propagate sgt
 policy static sgt 2 trusted
 !
 interface GigabitEthernet{{uplink_uplink}}
-switchport trunk allowed vlan add vlan {{data_vlan}}
+switchport trunk allowed vlan add vlan {{demo_vlan}}
 cts manual
 propagate sgt
 policy static sgt 2 trusted
