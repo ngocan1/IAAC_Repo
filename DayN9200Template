@@ -1,6 +1,5 @@
 # This template is simple example of making a switch configuration change
 
-
 # author Nigel Gocan
 !
 vlan {{demo_vlan}}
