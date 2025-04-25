@@ -1,5 +1,4 @@
 # This template is simple example of making a switch configuration change
-# I added this unnecessary line
 # author Nigel Gocan
 !
 vlan {{data_vlan}}
