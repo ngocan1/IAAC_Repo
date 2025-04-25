@@ -1,0 +1,23 @@
+# This template is simple example of making a switch configuration change
+# I added this unnecessary line
+# author Nigel Gocan
+!
+vlan {{data_vlan}}
+name data_vlan
+!
+cts role-based enforcement
+cts role-based enforcement vlan-list {{demo_vlan}}
+!
+interface range Gigabitethernet 1/0/1-10
+cts manual
+propagate sgt
+policy static sgt 2 trusted
+!
+interface GigabitEthernet{{uplink_uplink}}
+switchport trunk allowed vlan add vlan {{data_vlan}}
+cts manual
+propagate sgt
+policy static sgt 2 trusted
+!
+banner login c This switch is reserved for my demo c
+!
